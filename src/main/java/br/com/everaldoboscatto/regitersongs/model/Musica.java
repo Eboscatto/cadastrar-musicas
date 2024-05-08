@@ -9,8 +9,17 @@ public class Musica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nomeMusica;
-    @ManyToOne
+    @ManyToOne // Relação Bidireconal com Artista - muitos para um.
     private Artista artista;
+
+    public Musica() {
+
+    }
+
+    // Musica recebe nomeDaMusica
+    public Musica(String nomeDaMusica) {
+        this.nomeMusica = nomeDaMusica;
+    }
 
     public Long getId() {
         return id;
@@ -39,6 +48,6 @@ public class Musica {
     @Override
     public String toString() {
         return "Musica= '" + nomeMusica + '\'' +
-                ", artista=" + artista;
+                ", artista=" + artista.getNome();
     }
 }

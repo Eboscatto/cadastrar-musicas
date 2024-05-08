@@ -16,8 +16,17 @@ public class Artista {
     @Enumerated(EnumType.STRING)
     private TipoArtista tipo;
 
-    @OneToMany(mappedBy = "artista") // Relação um para muitos
+    // // Relação Bidireconal com Musica - um para muitos.
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Musica> musicas = new ArrayList<>();
+
+    public Artista() {
+
+    }
+    public Artista(String nomeArtista, TipoArtista tipoArtista) {
+        this.nome = nomeArtista;
+        this.tipo = tipoArtista;
+    }
 
     public Long getId() {
         return id;
