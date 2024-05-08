@@ -16,10 +16,13 @@ public class Principal {
                     3 - Cadastrar músicas
                     4 - Listar músicas
                     5 - Buscar músicas por artista
-                    6 - Pesquisar dados sobre um artista
-                    
-                    
+                    6 - Pesquisar dados sobre um artista                   
                     """;
+
+            System.out.println(menu);
+            System.out.println("Opção: ");
+            opcao = leitura.nextInt();
+            leitura.nextLine();
             switch (opcao) {
                 case 1:
                     cadastrarArtistas();
@@ -43,7 +46,7 @@ public class Principal {
                     System.out.println("Encerrando sistema...");
                     break;
                 default:
-                    break;
+                    System.out.println("Opção inválida!");
             }
 
         }
@@ -66,6 +69,5 @@ public class Principal {
 
     private void pesquisarDadosArtista() {
     }
-
 
 }
