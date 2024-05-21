@@ -1,6 +1,6 @@
 package br.com.everaldoboscatto.regitersongs.model;
 
-public enum TipoArtista {
+public enum TipoCarreira {
     SOLO,
     DUPLA,
     TRIO,

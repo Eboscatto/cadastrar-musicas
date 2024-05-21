@@ -14,7 +14,7 @@ public class Artista {
     @Column(unique = true)
     private String nome;
     @Enumerated(EnumType.STRING)
-    private TipoArtista tipo;
+    private TipoCarreira tipo;
 
     // // Relação Bidireconal com Musica - um para muitos.
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -23,9 +23,9 @@ public class Artista {
     public Artista() {
 
     }
-    public Artista(String nomeArtista, TipoArtista tipoArtista) {
+    public Artista(String nomeArtista, TipoCarreira tipoCarreira) {
         this.nome = nomeArtista;
-        this.tipo = tipoArtista;
+        this.tipo = tipoCarreira;
     }
 
     public Long getId() {
@@ -44,11 +44,11 @@ public class Artista {
         this.nome = nome;
     }
 
-    public TipoArtista getTipo() {
+    public TipoCarreira getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoArtista tipo) {
+    public void setTipo(TipoCarreira tipo) {
         this.tipo = tipo;
     }
 

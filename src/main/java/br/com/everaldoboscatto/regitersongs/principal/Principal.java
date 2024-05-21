@@ -2,7 +2,7 @@ package br.com.everaldoboscatto.regitersongs.principal;
 
 import br.com.everaldoboscatto.regitersongs.model.Artista;
 import br.com.everaldoboscatto.regitersongs.model.Musica;
-import br.com.everaldoboscatto.regitersongs.model.TipoArtista;
+import br.com.everaldoboscatto.regitersongs.model.TipoCarreira;
 import br.com.everaldoboscatto.regitersongs.repository.ArtistaRepository;
 import br.com.everaldoboscatto.regitersongs.service.ConsultaChatGPT;
 
@@ -74,7 +74,7 @@ public class Principal {
             var nomeArtista = leitura.nextLine();
             System.out.println("Informe qual o tipo de carreira do artista: [solo, dupla, trio ou banda]");
             var tipoCarreira = leitura.nextLine();
-            TipoArtista tipoArtista = TipoArtista.valueOf(tipoCarreira.toUpperCase());
+            TipoCarreira tipoArtista = TipoCarreira.valueOf(tipoCarreira.toUpperCase());
             Artista artista = new Artista(nomeArtista, tipoArtista);
             repositorio.save(artista);
             System.out.println("Cadastrar novo artista? (S/N)");
